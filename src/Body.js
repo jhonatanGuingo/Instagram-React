@@ -8,8 +8,9 @@ export default function Body(){
             <div class="esquerda">
                 < Stories />
                 < Posts />
-                < Sidebar />
             </div>
+                < Sidebar />
+            
         </div>
     )
 }
