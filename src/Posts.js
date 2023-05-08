@@ -8,7 +8,7 @@ export default function Posts(){
             imgPost: "assets/img/gato-telefone.svg",
             imgLike: "assets/img/respondeai.svg",
             likeUser: "respondeai",
-            numberLikes: "101.523"
+            numberLikes: "101523"
         },
         {
             imgUser: "assets/img/barked.svg",
@@ -16,7 +16,7 @@ export default function Posts(){
             imgPost: "assets/img/dog.svg",
             imgLike: "assets/img/adorable_animals.svg",
             likeUser: "adorable_animals",
-            numberLikes: "99.159"
+            numberLikes: "99159"
         },
         {
             imgUser: "assets/img/barked.svg",
@@ -24,7 +24,7 @@ export default function Posts(){
             imgPost: "assets/img/dog.svg",
             imgLike: "assets/img/adorable_animals.svg",
             likeUser: "adorable_animals",
-            numberLikes: "99.159"
+            numberLikes: "99159"
         }
     ]
 

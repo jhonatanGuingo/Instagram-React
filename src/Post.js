@@ -1,4 +1,22 @@
+import React from "react"
+
 export default function Post(props){
+    const [save, SetSave] = React.useState(false)
+    const iconeSave = save ? "bookmark" : "bookmark-outline";
+    let numeroLikes = Number(props.numberLikes);
+    const [heart, SetHeart] = React.useState("heart-outline")
+    const [heartIcon, SetRedIcon] = React.useState("heart-outline")
+    const [nLikes, SetNumberLikes] = React.useState(numeroLikes)
+   
+
+
+    function addLikes(){
+        SetRedIcon(heartIcon === "heart-outline" ? "red" : "black");
+        SetHeart(heartIcon === "heart-outline" ? "heart" : "heart-outline");
+        SetNumberLikes(heartIcon === "heart-outline" ? (nLikes +1) : (nLikes -1))
+
+    }
+ 
     return(
         <div class="post" data-test="post">
             <div class="topo">
@@ -18,19 +36,28 @@ export default function Post(props){
             <div class="fundo">
               <div class="acoes">
                 <div>
-                  <ion-icon name="heart-outline"></ion-icon>
+                  <ion-icon 
+                  data-test="like-post"
+                  name={heart}
+                  class = {heartIcon}
+                  onClick = {addLikes} ></ion-icon>
                   <ion-icon name="chatbubble-outline"></ion-icon>
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
                 <div>
-                  <ion-icon name="bookmark-outline"></ion-icon>
+                  <ion-icon 
+                  data-test="save-post"
+                  name={iconeSave}
+                  
+                  onClick= {() => SetSave(!save)}
+                  ></ion-icon>
                 </div>
               </div>
 
               <div class="curtidas">
                 <img src={props.imgLike}/>
                 <div class="texto">
-                  Curtido por <strong>{props.likeUser}</strong> e <strong>outras {props.numberLikes} pessoas</strong>
+                  Curtido por <strong>{props.likeUser}</strong> e <strong>outras {nLikes} pessoas</strong>
                 </div>
               </div>
             </div>
