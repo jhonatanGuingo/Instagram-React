@@ -57,7 +57,7 @@ export default function Post(props){
               <div class="curtidas">
                 <img src={props.imgLike}/>
                 <div class="texto">
-                  Curtido por <strong>{props.likeUser}</strong> e <strong>outras {nLikes} pessoas</strong>
+                  Curtido por <strong>{props.likeUser}</strong> e <strong>outras <span data-test="likes-number">{nLikes}</span> pessoas</strong>
                 </div>
               </div>
             </div>
