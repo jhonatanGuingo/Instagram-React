@@ -11,17 +11,24 @@ export default function Post(props){
 
 
     function addLikes(){
-        SetRedIcon(heartIcon === "heart-outline" ? "red" : "black");
-        SetHeart(heartIcon === "heart-outline" ? "heart" : "heart-outline");
-        SetNumberLikes(heartIcon === "heart-outline" ? (nLikes +1) : (nLikes -1))
+        SetHeart(heart === "heart-outline" ? "heart" : "heart-outline");
+        SetRedIcon(heart === "heart-outline" ? "red" : "black");
+        SetNumberLikes(heart === "heart-outline" ? (nLikes +1) : (nLikes -1))
 
+    }
+    function likeImg(){
+        if(heart === "heart-outline"){
+        SetHeart("heart" );
+        SetRedIcon("red" );
+        SetNumberLikes((nLikes +1) )
+    }
     }
  
     return(
         <div class="post" data-test="post">
             <div class="topo">
                 <div class="usuario">
-                    <img data-test="post-image" src={props.imgUser}/>
+                    <img src={props.imgUser}/>
                     {props.nameUser}
                 </div>
                 <div class="acoes">
@@ -30,7 +37,7 @@ export default function Post(props){
             </div>
 
             <div class="conteudo">
-              <img src={props.imgPost} />
+              <img data-test="post-image" onClick = {likeImg} src={props.imgPost} />
             </div>
 
             <div class="fundo">
